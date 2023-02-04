@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(rgba(0, 0, 0, 0.2), transparent, transparent);
+  border-radius: 50%;
+}
+.container .box {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-animation: animate 5s ease-in-out infinite;
+          animation: animate 5s ease-in-out infinite;
+  -webkit-animation-delay: -2.5s;
+          animation-delay: -2.5s;
+}
+.container .clock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(transparent, rgba(255, 255, 255, 0.2)), url(/dist/images/clock.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1), 0px 40px 50px rgba(0, 0, 0, 0.2);
+}
+.container .clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+}
+.container .clock .hour {
+  position: absolute;
+}
+.container .clock .hour .hr {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .clock .hour .hr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #fff120;
+  z-index: 3;
+  border-radius: 6px;
+}
+.container .clock .min {
+  position: absolute;
+}
+.container .clock .min .mn {
+  width: 190px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .clock .min .mn::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100px;
+  background: #000;
+  z-index: 3;
+  border-radius: 6px;
+}
+.container .clock .sec {
+  position: absolute;
+}
+.container .clock .sec .sc {
+  width: 230px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .clock .sec .sc::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 140px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+@-webkit-keyframes animate {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url(/dist/images/mikhail-vasilyev-NodtnCsLdTE-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #2ca37f, #2ca37f 50%, #ce4712 50%, #ce4712);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #448acb, #448acb 50%, transparent 50%, transparent);
+  -webkit-animation: animate 5s ease-in-out infinite;
+          animation: animate 5s ease-in-out infinite;
+}
+
+img {
+  width: 90px;
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translate(-50%);
+  z-index: 100000;
+}/*# sourceMappingURL=main.css.map */
